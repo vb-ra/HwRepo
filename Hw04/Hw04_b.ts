@@ -2,7 +2,7 @@
 //Exercise 2: Recursive Fibonacci sequence
 const n = 8;
 
-function fibonacci(n: number): number | null {
+function fibonacci(n: number): number | null { // en lugar de null es mejor usar undefined
     if (n > 10) {
         console.log(`Numbers bigger than 10 are not allowed`);
         return null;
@@ -15,7 +15,7 @@ function fibonacci(n: number): number | null {
 }
 
 const result = fibonacci(n);
-if (result !== null) {
+if (result) { // se podria preguntar solamente por result
     console.log(`F(${n}) = ${fibonacci(n)}`);
 }
 
