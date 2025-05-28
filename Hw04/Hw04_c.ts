@@ -10,7 +10,7 @@ function capitalizeStrings(strings: string[]): string[] {
 
 const capitalizedVersion = capitalizeStrings(inputArray);
 
-console.log(capitalizedVersion); // se pudo colocar una concatenacion con `
+console.log(`The capitalized string is: ${capitalizedVersion}`); // Se utilizó concatenación con `
 
 //Function to filter numbers between 50 and 75
 const numbers = [49, 40, 50, 12, 60, 7600, 76, 75, 45, -60, 62, 58, 91];
@@ -21,4 +21,4 @@ function filterNumbersInRange(numbers: number[]): number[] {
 
 const filteredNumbers = filterNumbersInRange(numbers);
 
-console.log(filteredNumbers); // se pudo colocar una concatenacion con `
+console.log(`The filtered numbers are: ${filteredNumbers}`); // Se utilizó concatenación con `
