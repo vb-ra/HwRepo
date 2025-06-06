@@ -22,11 +22,28 @@ class Books{
         this.yearPublished = yearPublished;
     }
 
-    printBookDetails(): string {
-        return `${this.title} by ${this.author}, published in ${this.yearPublished}`;
+    isClassic(): string | undefined {
+        const currentYear = new Date().getFullYear();
+        const classicResult = (currentYear - this.yearPublished >= 50) ? `- *Classic` : `- Not a Classic`;
+        return classicResult;
+    }
+
+    printBookDetails(): string | undefined{
+        return `
+        ${this.title} by ${this.author}, published in ${this.yearPublished}`;
     }
 }
 
-const book1 = new Books('The Shining', 'Stephen King', 1977);
+const book1 = new Books('Sin Familia', 'Hector Malot', 1878);
+const book2 = new Books('How Music Works', 'David Byrne', 2012);
+const book3 = new Books('Ready Player One', 'Ernest Cline', 2011);
+const book4 = new Books('Adventures of Huckleberry Finn', 'Mark Twain', 1885);
+const book5 = new Books('After Dark', 'Haruki Murakami', 2004);
 
-console.log(book1.printBookDetails());
+console.log(
+    book1.printBookDetails(),book1.isClassic(),
+    book2.printBookDetails(),book2.isClassic(),
+    book3.printBookDetails(),book3.isClassic(),
+    book4.printBookDetails(),book4.isClassic(),
+    book5.printBookDetails(),book5.isClassic(),
+);
