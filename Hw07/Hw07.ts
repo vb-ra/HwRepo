@@ -8,6 +8,16 @@ Define an abstract class named Animal including the following:
 +A public method getAge() that returns the age of the animal.
 */
 
+//Exercise: Animals classes (2/4)
+/*
+Create two subclasses of Animal: Dog and Cat.
+In the Dog class:
+    Set the name and age properties through a constructor.
+    Implement the makeSound() method to return "Woof!".
+In the Cat class:
+    Set the name and age properties through a constructor.
+    Implement the makeSound() method to return "Meow!".
+*/
 
 
 abstract class Animal {
@@ -27,5 +37,25 @@ abstract class Animal {
 
     public getAge(): void{
         `${this.age}`;
+    }
+}
+
+abstract class Dog extends Animal {
+    constructor(name: string, age: number) {
+        super(name, age);
+    }
+
+    makeSound(): string {
+        return `Woof!`
+    }
+}
+
+abstract class Cat extends Animal {
+    constructor(name: string, age: number) {
+        super(name, age);
+    }
+
+    makeSound(): string {
+        return `Meow!`
     }
 }
