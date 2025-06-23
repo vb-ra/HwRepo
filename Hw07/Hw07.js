@@ -24,13 +24,27 @@ var __extends = (this && this.__extends) || (function () {
 })();
 //Exercise: Animals classes (2/4)
 /*
-Create two subclasses of Animal: Dog and Cat.
-In the Dog class:
-    Set the name and age properties through a constructor.
-    Implement the makeSound() method to return "Woof!".
++Create two subclasses of Animal: Dog and Cat.
++In the Dog class:
++    Set the name and age properties through a constructor.
++    Implement the makeSound() method to return "Woof!".
 In the Cat class:
-    Set the name and age properties through a constructor.
-    Implement the makeSound() method to return "Meow!".
++    Set the name and age properties through a constructor.
++    Implement the makeSound() method to return "Meow!".
+*/
+//Exercise: Animals classes (3/4)
+/*
++Ensure that the name property in the Animal class is protected so that it can be accessed by subclasses but not from outside the class hierarchy.
++The age property should be private, meaning it cannot be accessed directly outside the Animal class.
++The getName() method should be public so that it can be accessed from outside the class.
++The getAge() method should be public so that it can be accessed by subclasses but not from outside the class hierarchy.
+*/
+//Exercise: Animals classes (4/4)
+/*
+In a separate class (e.g., AnimalTest), create instances of Dog and Cat.
+Use the getName() method to print the name of each animal.
+Call the makeSound() method for each animal and print the sound they make.
+Attempt to access the age property directly (this should fail, use try and catch to print an error message) and instead, use the getAge() method to print the age of each animal.
 */
 var Animal = /** @class */ (function () {
     function Animal(name, age) {
@@ -64,4 +78,24 @@ var Cat = /** @class */ (function (_super) {
         return "Meow!";
     };
     return Cat;
+}(Animal));
+var AnimalTest = /** @class */ (function (_super) {
+    __extends(AnimalTest, _super);
+    function AnimalTest(name, age) {
+        var _this = _super.call(this, name, age) || this;
+        _this.myDog = new Dog("JuanCarlos", 2);
+        _this.myCat = new Cat("Mitzi", 5);
+        return _this;
+    }
+    AnimalTest.prototype.makeSound = function () {
+    };
+    AnimalTest.prototype.printName = function () {
+        this.myDog.getName();
+        this.myCat.getName();
+    };
+    AnimalTest.prototype.betterCallSound = function () {
+        this.myDog.makeSound();
+        this.myCat.makeSound();
+    };
+    return AnimalTest;
 }(Animal));
