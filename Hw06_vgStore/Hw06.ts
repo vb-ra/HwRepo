@@ -10,7 +10,7 @@ class VideoGame {
     static availableGames: string[];    //an array to store all games that have more than 0 availableCopies
     static soldOutGames: string[];      //an array to store all games that have 0 availableCopies
     static totalSold: number;           //total sum of the copies already sold
-    static gamesToSell: VideoGame[] = [];       //array of videogames to Sell //quise hace unatributo estático para usar en el método sellGames
+    static gamesToSell: VideoGame[] = [];       //array of videogames to Sell //quise hacer un atributo estático para usar en el método sellGames
 
     constructor(title: string, developer: string, availableCopies: number, price: number, copiesSold: number) {
         this.title = title;
